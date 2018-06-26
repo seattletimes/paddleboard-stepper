@@ -1,0 +1,71 @@
+.spinner {
+  @keyframes spinner {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(359deg); }
+  }
+
+  color: white;
+  font-size: 100px;
+  transform-origin: 50% 50%;
+  animation: spinner 1s infinite;
+  line-height: 1;
+  display: none;
+
+}
+
+&.loading .spinner {
+  display: block;
+}
+
+.play-pause {
+  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  pointer-events: none;
+  border-radius: 8px;
+  font-family: @df-sans;
+  cursor: pointer;
+  display: none;
+
+  &:hover, &:focus {
+    color: @df-blue;
+  }
+
+  svg {
+    width: 120px;
+    height: 120px;
+    fill: currentColor;
+  }
+}
+
+&.paused .play-pause {
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+  color: @df-middle-gray;
+
+  input {
+    clip-path: inset(100%);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    overflow: hidden;
+  }
+
+  svg {
+    fill: currentColor;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+  }
+
+  input:checked + label {
+    color: @df-blue;
+  }
+}

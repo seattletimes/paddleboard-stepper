@@ -1,0 +1,38 @@
+.intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/206473_SODevonAdelman_0086.jpg);
+  background-size: cover;
+  background-position: 50% top;
+
+  &.hidden {
+    display: none;
+  }
+
+  .text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 50%;
+    background: white;
+    padding: 16px;
+    box-shadow: 0 16px 16px fade(black, 20%);
+
+    h1 {
+      margin: 0 0 20px;
+      font-style: italic;
+      font-size: 60px;
+    }
+
+    .credits {
+      font-family: @df-sans;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}

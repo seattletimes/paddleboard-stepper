@@ -12,6 +12,7 @@ var app = $.one(".app");
 var buffers = $(".app video");
 var navbar = $.one("nav.steps");
 var intro = $.one(".intro");
+var outro = $.one(".outro");
 var textOverlay = $.one(".text-overlays .content");
 var cueOverlay = $.one(".closed-captions");
 var captionCheck = $.one("#enable-captions");
@@ -38,10 +39,11 @@ var loadVideo = function(data, element, suppressCaption) {
   } else {
     track.src = "";
   }
-}
+};
 
 var playChapter = function(chapter) {
   intro.classList.add("hidden");
+  outro.classList.add("hidden");
   current = chapter;
   var data = videos[chapter];
   var [back, front] = buffers;
@@ -81,8 +83,12 @@ var playChapter = function(chapter) {
   wait(1000, () => loadVideo(preload, back, true));
 };
 
+// video event listeners
 var autoAdvance = function() {
   current++;
+  if (current >= videos.length) {
+    return outro.classList.remove("hidden");
+  }
   playChapter(current);
 };
 
@@ -114,13 +120,23 @@ var togglePlayback = function() {
   }
 };
 
-var jump = function() {
-  var chapter = this.getAttribute("data-chapter");
-  playChapter(chapter * 1);
-  this.blur();
+var events = {
+  ended: autoAdvance,
+  timeupdate: timeUpdated,
+  click: togglePlayback,
+  loadstart: loading,
+  waiting: loading,
+  loadeddata: loaded,
+  playing: loaded
 };
 
+for (var e in events) {
+  buffers.forEach(el => el.addEventListener(e, events[e]));
+}
+
+// closed caption events
 var oncue = function(e) {
+  if (!e.target.parentElement.classList.contains("front")) return;
   var track = e.target.track;
   var cues = track.activeCues;
   var text = Array.prototype.slice.call(cues).map(c => c.text).join("\n").trim();
@@ -131,29 +147,15 @@ var oncue = function(e) {
     cueOverlay.classList.remove("show");
   }
 };
+buffers.forEach(el => el.querySelector("track").addEventListener("cuechange", oncue));
 
 captionCheck.addEventListener("change", function() {
   if (!captionCheck.checked) {
     cueOverlay.classList.remove("show");
   }
-})
+});
 
-var events = {
-  ended: autoAdvance,
-  timeupdate: timeUpdated,
-  click: togglePlayback,
-  loadstart: loading,
-  waiting: loading,
-  loadeddata: loaded,
-  playing: loaded,
-  cuechange: e => console.log(e)
-};
-
-for (var e in events) {
-  buffers.forEach(el => el.addEventListener(e, events[e]));
-}
-buffers.forEach(el => el.querySelector("track").addEventListener("cuechange", oncue));
-
+// set up the buttons
 navbar.innerHTML = videos.map((d, i) => `
 <button class="play-chapter" aria-label="chapter ${i + 1}" data-chapter="${i}">
   <div class="highlight"></div>
@@ -161,10 +163,18 @@ navbar.innerHTML = videos.map((d, i) => `
 </button>
 `).join("");
 
+var jump = function() {
+  var chapter = this.getAttribute("data-chapter");
+  playChapter(chapter * 1);
+  this.blur();
+};
+
 $("button", navbar).forEach(el => el.addEventListener("click", jump));
 
+// preload the first video
+loadVideo(videos[0], buffers[0]);
+
+// go!
 intro.addEventListener("click", function() {
   playChapter(current);
 });
-
-loadVideo(videos[0], buffers[0]);
