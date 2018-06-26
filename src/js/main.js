@@ -34,7 +34,7 @@ var loadVideo = function(data, element, suppressCaption) {
   });
   var track = element.querySelector("track");
   // element.appendChild(source);
-  if (data.caption && !suppressCaption) {
+  if (data.caption) {
     track.src = `./assets/captions/${data.caption}`;
   } else {
     track.src = "";
@@ -44,6 +44,8 @@ var loadVideo = function(data, element, suppressCaption) {
 var playChapter = function(chapter) {
   intro.classList.add("hidden");
   outro.classList.add("hidden");
+  cueOverlay.classList.remove("show");
+  app.classList.remove("paused");
   current = chapter;
   var data = videos[chapter];
   var [back, front] = buffers;
@@ -69,7 +71,7 @@ var playChapter = function(chapter) {
           break;
 
         default:
-          text = data.text;
+          text = data.text.replace(/\n/g, "<br><br>");
       }
       textOverlay.innerHTML = text;
       textOverlay.setAttribute("data-type", data.type || "block");

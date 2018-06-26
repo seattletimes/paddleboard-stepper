@@ -50,6 +50,13 @@
   right: 10px;
   z-index: 9999;
   color: @df-middle-gray;
+  line-height: 1;
+
+  @media @mobile {
+    bottom: auto;
+    top: 10px;
+    right: 0px;
+  }
 
   input {
     clip-path: inset(100%);
@@ -63,6 +70,7 @@
     width: 48px;
     height: 48px;
     cursor: pointer;
+    display: block;
   }
 
   input:checked + label {

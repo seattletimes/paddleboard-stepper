@@ -17,15 +17,14 @@
   {
     "video": "04-devon_suptext.mp4",
     "mobile": "04-devon_suptext_300w.mp4",
-    "text": "Stand Up Paddle Boarding is making its \nUSA Games debut as an exhibition sport. \nSix states plan on competing with 23 athletes, \nincluding five from Washington.",
+    "text": "Stand Up Paddle Boarding is making its USA Games debut as an exhibition sport. Six states plan on competing with 23 athletes, including five from Washington.",
     "type": "block",
-    "undefined": "no captions"
+    "notes": "no captions"
   },
   {
     "video": "05-devon_intro.mp4",
     "mobile": "05-devon_intro_300w.mp4",
     "caption": "05devonintro.vtt",
-    "title": "Meet Devon",
     "text": "Devon Adelman \nUSA Special Olympics Athlete",
     "type": "lowerthird"
   },
@@ -42,7 +41,8 @@
   {
     "video": "08-devon_halegrad.mp4",
     "mobile": "08-devon_halegrad_300w.mp4",
-    "caption": "08devonhalegrad.vtt"
+    "caption": "08devonhalegrad.vtt",
+    "title": "Get to know Devon"
   },
   {
     "video": "09-devon_highline.mp4",
@@ -68,9 +68,9 @@
     "video": "13-devon_commutetext.mp4",
     "mobile": "13-devon_commutetext_300w.mp4",
     "title": "Commuting",
-    "text": "Monday through Friday, Devon \ncommutes to work downtown.",
+    "text": "Monday through Friday, Devon commutes to work downtown.",
     "type": "block",
-    "undefined": "no captions"
+    "notes": "no captions"
   },
   {
     "video": "14-devon_labaid.mp4",
@@ -97,8 +97,8 @@
     "video": "18-devon_practice.mp4",
     "mobile": "18-devon_practice_300w.mp4",
     "caption": "18devonpractice.vtt",
-    "text": "Sue Adelman\nDevon's mom",
-    "type": "lowerthird"
+    "type": "lowerthird",
+    "notes": "Sue Adelman\nDevon's mom"
   },
   {
     "video": "19-devon_firstnational.mp4",

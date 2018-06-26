@@ -18,16 +18,10 @@
     padding: 16px;
     display: block;
     background: fade(black, 50%);
-    transition: opacity .2s linear;
-    opacity: 0;
 
     h2 {
       color: white;
       margin: 0;
-    }
-
-    &.show {
-      opacity: 1;
     }
   }
 
@@ -40,11 +34,14 @@
     font-family: monospace;
     text-transform: uppercase;
     background: fade(black, 50%);
-    opacity: 0;
-    transition: opacity .2s linear;
+  }
+
+  .content, .closed-captions {
+    display: none;
+    animation: fade .2s linear;
 
     &.show {
-      opacity: 1;
+      display: block;
     }
   }
 }
