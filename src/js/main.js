@@ -18,7 +18,8 @@ var cueOverlay = $.one(".closed-captions");
 var captionCheck = $.one("#enable-captions");
 
 var wish = {
-  then: fn => fn()
+  then: fn => fn(),
+  catch: fn => null
 };
 
 var wait = (time, fn) => setTimeout(fn, time);
@@ -49,11 +50,18 @@ var playChapter = function(chapter) {
   current = chapter;
   var data = videos[chapter];
   var [back, front] = buffers;
-  back.pause();
+  if (!back.paused) back.pause();
   buffers = [front, back];
   // play video
   loadVideo(data, front);
+  // very, very stupid Safari bug
+  // refuses to auto-advance if controls don't exist
+  front.setAttribute("controls", "");
   var pending = front.play() || wish;
+  pending.catch(err => {
+    app.classList.add("paused");
+  });
+  front.removeAttribute("controls");
   var button = $.one(`[data-chapter="${chapter}"]`);
   if (button) {
     $("button.current").forEach(b => b.classList.remove("current"));
@@ -82,7 +90,7 @@ var playChapter = function(chapter) {
   });
 
   var preload = videos[chapter + 1];
-  wait(1000, () => loadVideo(preload, back, true));
+  // wait(1000, () => loadVideo(preload, back, true));
 };
 
 // video event listeners
@@ -101,7 +109,7 @@ var loading = function() {
 };
 
 var loaded = function() {
-  app.classList.remove("loading");
+  app.classList.remove("loading", "paused");
 };
 
 var timeUpdated = function(e) {
