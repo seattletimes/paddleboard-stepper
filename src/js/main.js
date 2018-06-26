@@ -7,6 +7,8 @@ var h = require("./lib/dom");
 var videos = window.videoData;
 var current = 0;
 var mobileBreak = 400;
+var isSafari = !!navigator.userAgent.match(/i(os|pad|phone)/i);
+var isMac = !!navigator.userAgent.match(/macos/i);
 
 var app = $.one(".app");
 var buffers = $(".app video");
@@ -51,10 +53,14 @@ var playChapter = function(chapter) {
   var data = videos[chapter];
   var [back, front] = buffers;
   if (!back.paused) back.pause();
-  buffers = [front, back];
+  // Safari currently grants autoplay on individual elements
+  // so no double-buffering for iPhones!
+  if (!isSafari) {
+    buffers = [front, back];
+  }
   // play video
   loadVideo(data, front);
-  // very, very stupid Safari bug
+  // very, very stupid Safari Desktop bug
   // refuses to auto-advance if controls don't exist
   front.setAttribute("controls", "");
   var pending = front.play() || wish;
@@ -89,8 +95,10 @@ var playChapter = function(chapter) {
     }
   });
 
-  var preload = videos[chapter + 1];
-  // wait(1000, () => loadVideo(preload, back, true));
+  if (!isSafari) {
+    var preload = videos[chapter + 1];
+    wait(1000, () => loadVideo(preload, back, true));
+  }
 };
 
 // video event listeners
@@ -134,6 +142,7 @@ var events = {
   ended: autoAdvance,
   timeupdate: timeUpdated,
   click: togglePlayback,
+  // touchstart: togglePlayback,
   loadstart: loading,
   waiting: loading,
   loadeddata: loaded,
