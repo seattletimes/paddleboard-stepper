@@ -1,0 +1,253 @@
+@import "seattletimes";
+
+nav.steps {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  .display-flex();
+
+  button {
+    background: @df-blue;
+    .flex(1);
+    height: 10px;
+    margin: 2px;
+    border-radius: 4px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+
+    &.current {
+      background: lighten(@df-blue, 20%);
+    }
+
+    &:hover, &:focus {
+      background: lighten(@df-blue, 10%);
+    }
+
+    &.current .highlight {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      background: white;
+      height: 100%;
+      transition: all .1s linear;
+    }
+
+    label {
+      position: absolute;
+      top: 100%;
+      color: @df-blue;
+      left: 0;
+      font-weight: bold;
+      @outline: fade(white, 50%);
+      font-size: 14px;
+      text-shadow: 
+        1px 0px 0px @outline,
+        -1px 0px 0px @outline,
+        0px -1px 0px @outline,
+        0px 1px 0px @outline;
+
+      @media @mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+main.app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  video {
+    max-width: none;
+    height: 100%;
+    background: @df-dark-gray;
+    z-index: -1;
+    background: transparent;
+    // opacity: 0;
+
+    // short
+    @media (min-aspect-ratio: 16 / 9) {
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-aspect-ratio: 16 / 9) {
+      height: 100%;
+      width: auto;
+    }
+
+    @media @mobile {
+      min-height: 100vh;
+      min-width: 100vw;
+      height: auto;
+      width: auto;
+    }
+
+    &.front {
+      z-index: 0;
+      opacity: 1;
+    }
+  }
+
+  .intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/206473_SODevonAdelman_0086.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .text-overlays {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    max-width: 50%;
+    width: 500px;
+    font-family: @df-sans;
+    animation: fade .6s linear;
+
+    @media @mobile {
+      max-width: 100%;
+      left: 0;
+      bottom: 0;
+    }
+
+    .content {
+      padding: 16px;
+      display: block;
+      background: fade(black, 50%);
+      transition: opacity .2s linear;
+      opacity: 0;
+
+      h2 {
+        color: white;
+        margin: 0;
+      }
+
+      &.show {
+        opacity: 1;
+      }
+    }
+
+    .closed-captions {
+      display: block;
+      padding: 16px;
+      margin-top: 8px;
+      text-align: center;
+      font-style: italic;
+      font-family: monospace;
+      text-transform: uppercase;
+      background: fade(black, 50%);
+      opacity: 0;
+      transition: opacity .2s linear;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+  .spinner {
+    @keyframes spinner {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(359deg); }
+    }
+
+    color: white;
+    font-size: 100px;
+    transform-origin: 50% 50%;
+    animation: spinner 1s infinite;
+    line-height: 1;
+    display: none;
+
+  }
+  
+  &.loading .spinner {
+    display: block;
+  }
+
+  .play-pause {
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    pointer-events: none;
+    border-radius: 8px;
+    font-family: @df-sans;
+    cursor: pointer;
+    display: none;
+
+    &:hover, &:focus {
+      color: @df-blue;
+    }
+
+    svg {
+      width: 120px;
+      height: 120px;
+      fill: currentColor;
+    }
+  }
+
+  &.paused .play-pause {
+    display: block;
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999;
+    color: @df-middle-gray;
+
+    input {
+      clip-path: inset(100%);
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+      overflow: hidden;
+    }
+
+    svg {
+      fill: currentColor;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+    }
+
+    input:checked + label {
+      color: @df-blue;
+    }
+  }
+}
+
+::cue {
+  background: fade(black, 50%);
+  font-size: 19px;
+}

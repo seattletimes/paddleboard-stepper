@@ -1,0 +1,114 @@
+[
+  {
+    "video": "01-devon_tryingnewthings.mp4",
+    "mobile": "01-devon_tryingnewthings_300w.mp4",
+    "caption": "01devontryingnewthings.vtt"
+  },
+  {
+    "video": "02-devon_newbigchallenge.mp4",
+    "mobile": "02-devon_newbigchallenge_300w.mp4",
+    "caption": "02devonnewbigchallenge.vtt"
+  },
+  {
+    "video": "03-devon_feltamazing.mp4",
+    "mobile": "03-devon_feltamazing_300w.mp4",
+    "caption": "03devonfeltamazing.vtt"
+  },
+  {
+    "video": "04-devon_suptext.mp4",
+    "mobile": "04-devon_suptext_300w.mp4",
+    "text": "Stand Up Paddle Boarding is making its \nUSA Games debut as an exhibition sport. \nSix states plan on competing with 23 athletes, \nincluding five from Washington.",
+    "type": "block",
+    "undefined": "no captions"
+  },
+  {
+    "video": "05-devon_intro.mp4",
+    "mobile": "05-devon_intro_300w.mp4",
+    "caption": "05devonintro.vtt",
+    "title": "Meet Devon",
+    "text": "Devon Adelman \nUSA Special Olympics Athlete",
+    "type": "lowerthird"
+  },
+  {
+    "video": "06-devon_sohistory.mp4",
+    "mobile": "06-devon_sohistory_300w.mp4",
+    "caption": "06devonsohistory.vtt"
+  },
+  {
+    "video": "07-devon_thisyear.mp4",
+    "mobile": "07-devon_thisyear_300w.mp4",
+    "caption": "07devonthisyear.vtt"
+  },
+  {
+    "video": "08-devon_halegrad.mp4",
+    "mobile": "08-devon_halegrad_300w.mp4",
+    "caption": "08devonhalegrad.vtt"
+  },
+  {
+    "video": "09-devon_highline.mp4",
+    "mobile": "09-devon_highline_300w.mp4",
+    "caption": "09devonhighline.vtt"
+  },
+  {
+    "video": "10-devon_singdance.mp4",
+    "mobile": "10-devon_singdance_300w.mp4",
+    "caption": "10devonsingdance.vtt"
+  },
+  {
+    "video": "11-devon_song.mp4",
+    "mobile": "11-devon_song_300w.mp4",
+    "caption": "11devonsong.vtt"
+  },
+  {
+    "video": "12-devon_acceptedme.mp4",
+    "mobile": "12-devon_acceptedme_300w.mp4",
+    "caption": "12devonacceptedme.vtt"
+  },
+  {
+    "video": "13-devon_commutetext.mp4",
+    "mobile": "13-devon_commutetext_300w.mp4",
+    "title": "Commuting",
+    "text": "Monday through Friday, Devon \ncommutes to work downtown.",
+    "type": "block",
+    "undefined": "no captions"
+  },
+  {
+    "video": "14-devon_labaid.mp4",
+    "mobile": "14-devon_labaid_300w.mp4",
+    "caption": "14devonlabaid.vtt"
+  },
+  {
+    "video": "15-devon_cells.mp4",
+    "mobile": "15-devon_cells_300w.mp4",
+    "caption": "15devoncells.vtt"
+  },
+  {
+    "video": "16-devon_rolemodel.mp4",
+    "mobile": "16-devon_rolemodel_300w.mp4",
+    "caption": "16devonrolemodel.vtt",
+    "title": "Being a role model"
+  },
+  {
+    "video": "17-devon_challenge.mp4",
+    "mobile": "17-devon_challenge_300w.mp4",
+    "caption": "17devonchallenge.vtt"
+  },
+  {
+    "video": "18-devon_practice.mp4",
+    "mobile": "18-devon_practice_300w.mp4",
+    "caption": "18devonpractice.vtt",
+    "text": "Sue Adelman\nDevon's mom",
+    "type": "lowerthird"
+  },
+  {
+    "video": "19-devon_firstnational.mp4",
+    "mobile": "19-devon_firstnational_300w.mp4",
+    "caption": "19devonfirstnational.vtt",
+    "title": "Going for gold"
+  },
+  {
+    "video": "20-devon_getgold.mp4",
+    "mobile": "20-devon_getgold_300w.mp4",
+    "caption": "20devongetgold.vtt"
+  }
+]
