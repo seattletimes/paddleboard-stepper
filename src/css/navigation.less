@@ -5,6 +5,12 @@ nav.steps {
   width: calc(~"100% - 20px");
   z-index: 999;
   .display-flex();
+  
+  @media @mobile {
+    left: 2px;
+    width: calc(~"100% - 4px");
+    top: 4px;
+  }
 
   button {
     background: @df-middle-gray;
@@ -14,6 +20,12 @@ nav.steps {
     border-radius: 2px;
     border: none;
     position: relative;
+    padding: 0;
+    
+    @media @mobile {
+      margin-left: 0;
+      border-radius: 0;
+    }
 
     &.current {
       background: lighten(@df-middle-gray, 20%);
