@@ -1,8 +1,8 @@
 nav.steps {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 10px;
+  left: 10px;
+  width: calc(~"100% - 20px");
   z-index: 999;
   .display-flex();
 
@@ -43,6 +43,8 @@ nav.steps {
       @outline: white;
       @blur: 0px;
       font-size: 14px;
+      width: 200%;
+      text-align: left;
       text-shadow: 
         1px 0px @blur @outline,
         1px 1px @blur @outline,
