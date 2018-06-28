@@ -11,6 +11,7 @@
     <main class="app">
       <video class="centered buffer" playsinline preload="auto"><track kind="metadata" default></track></video>
       <video class="centered buffer" playsinline preload="auto"><track kind="metadata" default></track></video>
+      
       <section class="intro">
         <div class="text">
           <h1>Paddling for gold</h1>
@@ -18,20 +19,30 @@
           <p>
             Devon Adelman has always risen to the occasion, from competing in soccer and skiing to advocating for disability rights and being a Special Olympics ambassador. Her next big goal: A stand-up paddle board gold medal at the USA Games.
           <p>
-            Click to play the video, or choose a section from the navigation bar at the top.
+            <i>Click to play the video, or choose a section from the navigation bar at the top.</i>
         </div>
       </section>
-      <section class="outro hidden">OUTRO</section>
+      
+      <section class="outro hidden">
+        <div class="content">
+          <img src="./assets/st-logo.png" alt="The Seattle Times">
+          <button class="restart">Restart presentation</button>
+        </div>
+      </section>
+      
       <div class="centered spinner">∴</div>
+      
       <button class="centered play-pause">
         <div role="img" alt="play">
           <%= t.include("./assets/icons/baseline-play_circle_outline-24px.svg") %>
         </div>
       </button>
+      
       <div class="text-overlays">
         <div class="content"></div>
         <div class="closed-captions"></div>
       </div>
+      
       <div class="controls">
         <input type="checkbox" checked="true" id="enable-captions">
         <label for="enable-captions">

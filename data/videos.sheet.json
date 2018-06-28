@@ -17,7 +17,7 @@
   {
     "video": "04-devon_suptext.mp4",
     "mobile": "04-devon_suptext_300w.mp4",
-    "text": "Stand Up Paddle Boarding is making its USA Games debut as an exhibition sport. Six states plan on competing with 23 athletes, including five from Washington.",
+    "text": "Stand up paddle boarding is making its USA Games debut as an exhibition sport. Six states plan on competing with 23 athletes, including five from Washington.",
     "type": "block",
     "notes": "no captions"
   },
@@ -37,6 +37,32 @@
     "video": "07-devon_thisyear.mp4",
     "mobile": "07-devon_thisyear_300w.mp4",
     "caption": "07devonthisyear.vtt"
+  },
+  {
+    "video": "21-devon_sup1.mp4",
+    "mobile": "21-devon_sup1_300w.mp4",
+    "caption": "21devonsup1.vtt",
+    "title": "How to SUP"
+  },
+  {
+    "video": "22-devon_sup2.mp4",
+    "mobile": "22-devon_sup2_300w.mp4",
+    "text": "1. Gaze ahead, at the horizon.\n2. Hold the T-shaped top of the paddle with one hand and the shaft of the paddle with the other."
+  },
+  {
+    "video": "23-devon_sup3.mp4",
+    "mobile": "23-devon_sup3_300w.mp4",
+    "text": "3. Reach as far as you can toward the nose of the board with the paddle.\n4. Using your core, pull the paddle back to your feet."
+  },
+  {
+    "video": "24-devon_sup4.mp4",
+    "mobile": "24-devon_sup4_300w.mp4",
+    "text": "5. Submerge the blade into water with the curved scoped side facing you.\n6. Finally, bring the bladeup and turn it so the edge cuts through the wind and repeat on either side."
+  },
+  {
+    "video": "25-devon_sup5.mp4",
+    "mobile": "25-devon_sup5_300w.mp4",
+    "caption": "25devonsup5.vtt"
   },
   {
     "video": "08-devon_halegrad.mp4",
@@ -67,7 +93,7 @@
   {
     "video": "13-devon_commutetext.mp4",
     "mobile": "13-devon_commutetext_300w.mp4",
-    "title": "Commuting",
+    "title": "Being a role model",
     "text": "Monday through Friday, Devon commutes to work downtown.",
     "type": "block",
     "notes": "no captions"
@@ -85,8 +111,7 @@
   {
     "video": "16-devon_rolemodel.mp4",
     "mobile": "16-devon_rolemodel_300w.mp4",
-    "caption": "16devonrolemodel.vtt",
-    "title": "Being a role model"
+    "caption": "16devonrolemodel.vtt"
   },
   {
     "video": "17-devon_challenge.mp4",
@@ -103,12 +128,47 @@
   {
     "video": "19-devon_firstnational.mp4",
     "mobile": "19-devon_firstnational_300w.mp4",
-    "caption": "19devonfirstnational.vtt",
-    "title": "Going for gold"
+    "caption": "19devonfirstnational.vtt"
   },
   {
-    "video": "20-devon_getgold.mp4",
-    "mobile": "20-devon_getgold_300w.mp4",
-    "caption": "20devongetgold.vtt"
+    "video": "20-devon_getgold-2.mp4",
+    "mobile": "20-devon_getgold-2_300w.mp4",
+    "caption": "20devongetgold.vtt",
+    "title": "The Competition"
+  },
+  {
+    "video": "26-devon_coursetext1.mp4",
+    "mobile": "26-devon_coursetext1_300w.mp4",
+    "text": "The two-day competition starts with an assessment round to place athletes in divisions based on ability, distance and time."
+  },
+  {
+    "video": "27-devon_coursetext2.mp4",
+    "mobile": "27-devon_coursetext2_300w.mp4",
+    "text": "The final competition takes place on the second day, with athletes competing in multiple levels that vary by the number of laps around the course."
+  },
+  {
+    "video": "27-devon_coursetext3.mp4",
+    "mobile": "27-devon_coursetext3_300w.mp4",
+    "caption": "27devoncoursetext3.vtt"
+  },
+  {
+    "video": "27-devon_opportunity.mp4",
+    "mobile": "27-devon_opportunity_300w.mp4",
+    "caption": "27devonopportunity.vtt"
+  },
+  {
+    "video": "28-devon_dreamcometrue.mp4",
+    "mobile": "28-devon_dreamcometrue_300w.mp4",
+    "caption": "28devondreamcometrue.vtt"
+  },
+  {
+    "video": "29-devon_lifechanging.mp4",
+    "mobile": "29-devon_lifechanging_300w.mp4",
+    "caption": "29devonlifechanging.vtt"
+  },
+  {
+    "video": "30-devon_credits.mp4",
+    "mobile": "30-devon_credits_300w.mp4",
+    "text": "Video: Lauren Frohne & Bettina Hansen\nVideo Editing: Lauren Frohne\nGraphics: Emily M. Eng\nDevelopment: Thomas Wilburn\nPaddle boarding source: MJ Weibling\nCanoe captain & driver: Jessey Dearing"
   }
 ]

@@ -97,7 +97,7 @@ var playChapter = function(chapter) {
 
   if (!isSafari) {
     var preload = videos[chapter + 1];
-    wait(1000, () => loadVideo(preload, back, true));
+    if (preload) wait(1000, () => loadVideo(preload, back, true));
   }
 };
 
@@ -105,6 +105,8 @@ var playChapter = function(chapter) {
 var autoAdvance = function() {
   current++;
   if (current >= videos.length) {
+    cueOverlay.classList.remove("show");
+    textOverlay.classList.remove("show");
     return outro.classList.remove("hidden");
   }
   playChapter(current);
@@ -196,4 +198,8 @@ loadVideo(videos[0], buffers[0]);
 // go!
 intro.addEventListener("click", function() {
   playChapter(current);
+});
+
+$.one(".restart").addEventListener("click", function() {
+  playChapter(0);
 });
